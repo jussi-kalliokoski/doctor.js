@@ -23,7 +23,7 @@
 		"doctor.js": "bin/doctor.js"
 	},
 
-	"tags": {
+	"tags": [
 		"docs",
 		"documentation",
 		"doctor",
@@ -32,5 +32,5 @@
 		"json",
 		"idl",
 		"jsdoc"
-	}
+	]
 }
