@@ -2,7 +2,7 @@
 	"author": "Jussi Kalliokoski <jussi.kalliokoski@gmail.com> (http://avd.io)",
 	"name": "doctor.js",
 	"description": "A format-agnostic documentation tool.",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"homepage": "https://github.com/jussi-kalliokoski/doctor.js",
 
 	"repository": {
