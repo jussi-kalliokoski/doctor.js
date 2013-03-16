@@ -7,6 +7,7 @@ doctor.js also aims to minimize the amount of redundancy common to JS documentat
 ## Features
 
  * Simple context detection, e.g.
+
 ```javascript
 
 /**
@@ -52,7 +53,9 @@ var MyView = Backbone.View.extend({
 });
 
 ```
+
  * Local aliasing:
+
 ```javascript
 
 /**
