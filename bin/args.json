@@ -1,26 +1,19 @@
 {
-	"name": "build",
-	"usage": "doctor.js [options] <file1> <file2> ...",
-	"params": [
-		{
-			"name":	"debug",
-			"args":	["--debug", "-d"],
-			"desc":	"Run in debug mode (more verbose error messages).",
-			"maxParams": 0
-		},
-		{
-			"name":	"outfile",
-			"args":	["--out", "-o"],
-			"desc":	"Output file. Default: STDOUT.",
-			"minParams": 1,
-			"maxParams": 1
-		},
-		{
-			"name": "format",
-			"args": ["--format", "-f"],
-			"desc": "Output format. Default: JSON.",
-			"minParams": 1,
-			"maxParams": 1
-		}
-	]
+    "name": "build",
+    "usage": "doctor.js [options] <file1> <file2> ...",
+    "params": [
+        {
+            "name":    "debug",
+            "args":    ["--debug", "-d"],
+            "desc":    "Run in debug mode (more verbose error messages).",
+            "maxParams": 0
+        },
+        {
+            "name":    "outfile",
+            "args":    ["--out", "-o"],
+            "desc":    "Output file. Default: STDOUT.",
+            "minParams": 1,
+            "maxParams": 1
+        }
+    ]
 }

@@ -1,50 +1,52 @@
 #!/usr/bin/env node
 
-function handleError (e) {
-	console.error(e.toString())
-	process.exit(1)
+"use strict";
+
+var handleError = function (e) {
+    console.error(e.toString())
+    process.exit(1)
 }
 
-function finish () {
-	var data = builder.build(parser.data)
+var finish = function () {
+    var data = builder.build(parser.data)
 
-	write(formatter.format(data))
+    write(JSON.stringify(data))
 }
 
-function write () {
-	var data = [].join.call(arguments, ' ')
+var write = function () {
+    var data = [].join.call(arguments, ' ')
 
-	if (outputFile === '-') {
-		process.stdout.write(data)
-	} else {
-		fs.writeFile(outputFile, data, 'utf8', function (e) {
-			if (e) throw e
-		})
-	}
+    if ( outputFile === '-' ) {
+        process.stdout.write(data)
+    } else {
+        fs.writeFile(outputFile, data, 'utf8', function (e) {
+            if (e) throw e
+        })
+    }
 }
 
-function read (file) {
-	if (file === '-') {
-		process.stdin.on('data', function (data) {
-			data = String(data)
+var read = function (file) {
+    if ( file === '-' ) {
+        process.stdin.on('data', function (data) {
+            data = String(data)
 
-			parse(data)
-		})
+            parse(data)
+        })
 
-		process.stdin.resume()
-	} else {
-		fs.readFile(file, 'utf8', function (e, data) {
-			if (e) throw e
+        process.stdin.resume()
+    } else {
+        fs.readFile(file, 'utf8', function (e, data) {
+            if (e) throw e
 
-			parse(data)
-		})
-	}
+            parse(data)
+        })
+    }
 }
 
-function parse (data) {
-	parser.parse(data)
+var parse = function (data) {
+    parser.parse(data)
 
-	if (!--filesToRead) finish()
+    if ( !--filesToRead ) finish()
 }
 
 
@@ -54,23 +56,15 @@ var paramon = require('paramon')
 
 var args = paramon.readFormat(process.argv, require('./args.json'))
 
-if (!args.debug) process.on('uncaughtException', handleError)
+if ( !args.debug ) process.on('uncaughtException', handleError)
 
 var parser = new DoctorJS.Parser()
 var builder = new DoctorJS.Builder()
 
-var formatter = args.format || 'JSON'
-
-if (!DoctorJS.formatters.hasOwnProperty(formatter)) {
-	throw formatter + 'is not a supported format!'
-}
-
-formatter = new DoctorJS.formatters[formatter]()
-
 var outputFile = args.outfile || '-'
 var inFiles = args['$!stray']
 
-if (!inFiles.length) inFiles.push('-')
+if ( !inFiles.length ) inFiles.push('-')
 
 var filesToRead = inFiles.length
 

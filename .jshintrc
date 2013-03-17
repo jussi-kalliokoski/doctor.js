@@ -1,0 +1,8 @@
+{
+  "globals": {
+  },
+
+  "node": true,
+  "es5": true,
+  "asi": true
+}

@@ -1,6 +1,6 @@
 # doctor.js
 
-[![Build Status](https://travis-ci.org/jussi-kalliokoski/doctor.js.png?branch=master)](https://travis-ci.org/jussi-kalliokoski/doctor.js)
+[![Build Status](https://travis-ci.org/jussi-kalliokoski/doctor.js.png?branch=master)](https://travis-ci.org/jussi-kalliokoski/doctor.js) [![NPM version](https://badge.fury.io/js/doctor.js.png)](http://badge.fury.io/js/doctor.js)
 
 doctor.js is a tool that parses javascript documentation (JSDoc-like) and formulates interface definitions from that, in an easily machine-readable JSON format. The goal is to act as a tool for documentation generators and editors so that those tools can focus on the presentation rather than gathering the interface definitions from the code.
 
